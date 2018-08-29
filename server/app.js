@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://heroku_2vblbbtq:heroku_2vblbbtq@ds237832.mlab.com:37832/heroku_2vblbbtq' || 'mongodb://localhost/my-blog');
+mongoose.connect(process.env.MONGODBURI || 'mongodb://localhost/my-blog');
 
 mongoose.Promise = Promise;
 
